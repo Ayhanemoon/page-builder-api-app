@@ -8,9 +8,9 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('title').notNullable()
       table.string('slug').notNullable()
-      table.text('content').notNullable()
-      table.text('layout').notNullable()
-      table.text('seo_config').nullable()
+      table.json('content').notNullable()
+      table.json('layout').notNullable()
+      table.json('seo_config').nullable()
       table.specificType('creator_id', 'integer[]').references('id').inTable('users')
       table.integer('status_id').unsigned().references('id').inTable('options')
       
