@@ -11,8 +11,8 @@ export default class extends BaseSchema {
       table.json('content').notNullable()
       table.json('layout').notNullable()
       table.json('seo_config').nullable()
-      table.specificType('creator_id', 'integer[]').references('id').inTable('users')
-      table.integer('status_id').unsigned().references('id').inTable('options')
+      table.integer('creator_id').unsigned().references('id').inTable('users').onDelete('SET NULL')
+      table.integer('status_id').unsigned().references('id').inTable('options').onDelete('SET NULL')
       
       table.timestamp('created_at')
       table.timestamp('updated_at')

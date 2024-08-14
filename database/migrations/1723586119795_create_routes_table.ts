@@ -11,8 +11,7 @@ export default class extends BaseSchema {
       table.string('path').notNullable()
       table.integer('page_id').unsigned().references('id').inTable('pages')
       table.integer('parent_id').unsigned().nullable().references('id').inTable('routes')
-      table.specificType('children', 'integer[]').nullable().references('id').inTable('routes')
-      table.integer('creator_id').unsigned().references('id').inTable('users')
+      table.integer('creator_id').unsigned().references('id').inTable('users').onDelete('SET NULL')
       
       table.timestamp('created_at')
       table.timestamp('updated_at')
