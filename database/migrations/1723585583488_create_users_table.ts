@@ -13,6 +13,7 @@ export default class extends BaseSchema {
       table.string('avatar_url', 255).nullable()
       table.string('email', 254).notNullable().unique()
       table.string('mobile', 16).nullable()
+      table.integer('status').unsigned().nullable().references('id').inTable('options').onDelete('SET NULL')
       table.integer('state_id').unsigned().nullable().references('id').inTable('options').onDelete('SET NULL')
       table.integer('city_id').unsigned().nullable().references('id').inTable('options').onDelete('SET NULL')
       table.string('password', 255).notNullable()
