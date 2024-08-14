@@ -9,7 +9,6 @@ export default class extends BaseSchema {
       table.string('label', 255).notNullable()
       table.string('value', 255).notNullable()
       table.string('type', 100).notNullable()
-      table.string('value_type', 100).notNullable()
       
       table.timestamp('created_at')
       table.timestamp('updated_at')
