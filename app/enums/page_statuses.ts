@@ -1,7 +1,7 @@
 enum PageStatuses {
-    Draft=1,
-    Published=2,
-    Archive=3
+    Draft='draft',
+    Published='published',
+    Archived='archived'
 }
 
 export default PageStatuses
